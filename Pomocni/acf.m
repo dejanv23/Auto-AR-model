@@ -1,0 +1,9 @@
+function res=acf(rniz,l)
+r=mean(rniz);
+T=size(rniz,1);
+d=sum((rniz-r*ones(T,1)).^2);
+r1=rniz((l+1):T,:);
+r2=rniz(1:(T-l),:);
+rb=r*ones(T-l,1);
+g=(r1-rb)'*(r2-rb);
+res=g/d;
